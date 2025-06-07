@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Business Automation Mastery Course</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        
+        .hero .description {
+            font-size: 1.2rem;
+            color: #34495e;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .price-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .original-price {
+            font-size: 2rem;
+            color: #e74c3c;
+            text-decoration: line-through;
+        }
+        
+        .current-price {
+            font-size: 3rem;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .savings {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(238, 90, 36, 0.6);
+        }
+        
+        .urgency {
+            background: #f39c12;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .course-content, .bonuses {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-content h2, .bonuses h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .module {
+            background: #f8f9fa;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .module h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .module-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .module p {
+            color: #34495e;
+        }
+        
+        .bonus-item {
+            background: #fff3cd;
+            border: 2px solid #f39c12;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .bonus-item h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .bonus-value {
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .testimonials {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonials h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .testimonial {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #27ae60;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .guarantee {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid #27ae60;
+        }
+        
+        .guarantee h2 {
+            color: #27ae60;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        .final-cta {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .price-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>AI Business Automation Mastery</h1>
+            <p class="subtitle">Transform Your Business with No-Code AI Solutions</p>
+            <p class="description">
+                Learn how to automate 80% of your business processes using cutting-edge AI tools - no technical skills required. 
+                Join 2,847+ entrepreneurs who've already saved 20+ hours per week and increased revenue by 40%.
+            </p>
+            
+            <div class="urgency">
+                ⚡ LIMITED TIME: Early Bird Special Ends in 48 Hours ⚡
+            </div>
+            
+            <div class="price-container">
+                <span class="original-price">£97</span>
+                <span class="current-price">£25</span>
+                <span class="savings">Save £72!</span>
+            </div>
+            
+            <button class="cta-button" onclick="handlePurchase()">
+                🚀 Get Instant Access Now
+            </button>
+            
+            <p style="margin-top: 15px; color: #7f8c8d;">
+                ✅ Instant Download • ✅ 60-Day Money-Back Guarantee • ✅ Lifetime Access
+            </p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">20+</span>
+                <div class="stat-label">Hours Saved Per Week</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">40%</span>
+                <div class="stat-label">Average Revenue Increase</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2,847</span>
+                <div class="stat-label">Successful Students</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="course-content">
+                <h2>Course Modules</h2>
+                
+                <div class="module">
+                    <h3>Module 1: AI Foundation & Strategy</h3>
+                    <div class="module-meta">⏱️ 45 minutes • 🎥 5 videos • 📄 Workbook</div>
+                    <p>Understand AI business applications, identify automation opportunities, and create your custom AI strategy roadmap.</p>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 2: Customer Service Automation</h3>
+                    <div class="module-meta">⏱️ 60 minutes • 🎥 7 videos • 🛠️ Templates</div>
+                    <p>Set up AI chatbots, automated email responses, and customer support systems that work 24/7.</p>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 3: Sales & Marketing Automation</h3>
+                    <div class="module-meta">⏱️ 75 minutes • 🎥 8 videos • 📊 Templates</div>
+                    <p>Create AI-powered sales funnels, automated lead generation, and personalized marketing campaigns.</p>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 4: Content Creation with AI</h3>
+                    <div class="module-meta">⏱️ 50 minutes • 🎥 6 videos • 🎨 Tools</div>
+                    <p>Generate blog posts, social media content, and marketing materials using advanced AI tools.</p>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 5: Operations & Workflow Automation</h3>
+                    <div class="module-meta">⏱️ 55 minutes • 🎥 7 videos • ⚙️ Setup Guides</div>
+                    <p>Automate invoicing, scheduling, data entry, and routine administrative tasks.</p>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 6: Advanced AI Integration</h3>
+                    <div class="module-meta">⏱️ 40 minutes • 🎥 5 videos • 🔧 Tools</div>
+                    <p>Connect multiple AI tools, create custom workflows, and scale your automation systems.</p>
+                </div>
+            </div>
+            
+            <div class="bonuses">
+                <h2>Exclusive Bonuses</h2>
+                
+                <div class="bonus-item">
+                    <h4>🎁 Bonus #1: AI Tools Directory</h4>
+                    <p>Comprehensive database of 200+ AI tools with reviews, pricing, and use cases.</p>
+                    <div class="bonus-value">Value: £47</div>
+                </div>
+                
+                <div class="bonus-item">
+                    <h4>🎁 Bonus #2: Done-For-You Templates</h4>
+                    <p>50+ ready-to-use automation templates for different business types and industries.</p>
+                    <div class="bonus-value">Value: £67</div>
+                </div>
+                
+                <div class="bonus-item">
+                    <h4>🎁 Bonus #3: Private Community Access</h4>
+                    <p>Join our exclusive Discord community for ongoing support and networking.</p>
+                    <div class="bonus-value">Value: £47</div>
+                </div>
+                
+                <div class="bonus-item">
+                    <h4>🎁 Bonus #4: Monthly Live Q&A Sessions</h4>
+                    <p>Join monthly live sessions with AI experts for troubleshooting and advanced strategies.</p>
+                    <div class="bonus-value">Value: £97</div>
+                </div>
+                
+                <div class="bonus-item">
+                    <h4>🎁 Bonus #5: ROI Calculator Spreadsheet</h4>
+                    <p>Track your time savings and revenue improvements with our custom calculator.</p>
+                    <div class="bonus-value">Value: £27</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h2>What Students Are Saying</h2>
+            
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    "This course saved me 25 hours per week! I automated my entire customer onboarding process and increased my conversion rate by 60%. The ROI was incredible - I made back the investment in the first week."
+                </div>
+                <div class="testimonial-author">- Sarah Mitchell, Marketing Agency Owner</div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    "As a non-technical person, I was worried about implementing AI. This course made everything so simple. I now have chatbots handling 80% of my customer inquiries, and my revenue has increased by £3,000 per month."
+                </div>
+                <div class="testimonial-author">- James Parker, E-commerce Business Owner</div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    "The automation templates alone are worth 10x the price. I set up my entire sales funnel in one afternoon and it's been generating leads on autopilot ever since."
+                </div>
+                <div class="testimonial-author">- Lisa Chen, Business Consultant</div>
+            </div>
+        </div>
+
+        <div class="guarantee">
+            <h2>60-Day Money-Back Guarantee</h2>
+            <p style="font-size: 1.2rem; color: #34495e; margin-bottom: 20px;">
+                Try the course risk-free for 60 days. If you don't save at least 10 hours per week or see measurable improvements in your business, get a full refund - no questions asked.
+            </p>
+            <p style="color: #27ae60; font-weight: bold; font-size: 1.1rem;">
+                That's how confident we are that this will transform your business.
+            </p>
+        </div>
+
+        <div class="final-cta">
+            <h2 style="color: #2c3e50; margin-bottom: 20px;">Ready to Transform Your Business?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; color: #34495e;">
+                Join thousands of entrepreneurs who've already automated their way to success.
+                Don't let manual processes hold you back any longer.
+            </p>
+            
+            <div class="urgency">
+                🔥 ONLY 24 HOURS LEFT AT THIS PRICE 🔥
+            </div>
+            
+            <button class="cta-button" onclick="handlePurchase()" style="font-size: 1.5rem; padding: 25px 60px;">
+                Get Instant Access - £25
+            </button>
+            
+            <p style="margin-top: 20px; color: #7f8c8d;">
+                ⭐ Lifetime Access • ⭐ All Future Updates • ⭐ Community Support
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function handlePurchase() {
+            // In a real implementation, this would connect to a payment processor
+            alert("Thank you for your interest! In a real implementation, this would redirect to a secure payment page (Stripe, PayPal, etc.)");
+            
+            // Example implementation:
+            // window.location.href = "https://checkout.stripe.com/your-payment-link";
+            
+            // Or for demonstration, you could show a modal with purchase details
+            showPurchaseModal();
+        }
+        
+        function showPurchaseModal() {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 40px; border-radius: 15px; max-width: 500px; text-align: center;">
+                    <h2 style="color: #27ae60; margin-bottom: 20px;">🎉 Ready to Purchase!</h2>
+                    <p style="margin-bottom: 20px;">You'll get instant access to:</p>
+                    <ul style="text-align: left; margin-bottom: 30px;">
+                        <li>Complete AI Automation Course (6 modules)</li>
+                        <li>All 5 Bonus Resources (£585 value)</li>
+                        <li>Lifetime Access & Updates</li>
+                        <li>60-Day Money-Back Guarantee</li>
+                    </ul>
+                    <p style="font-size: 1.2rem; margin-bottom: 20px;"><strong>Total Value: £482</strong></p>
+                    <p style="font-size: 1.5rem; color: #e74c3c; margin-bottom: 30px;"><strong>Your Price: £25</strong></p>
+                    <button onclick="modal.remove()" style="background: #3498db; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px;">Continue to Payment</button>
+                    <button onclick="modal.remove()" style="background: #95a5a6; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer;">Close</button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+        
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Countdown timer (demo)
+            let timeLeft = 48 * 60 * 60; // 48 hours in seconds
+            
+            function updateCountdown() {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                // Update urgency text
+                const urgencyElements = document.querySelectorAll('.urgency');
+                urgencyElements[0].innerHTML = `⚡ LIMITED TIME: ${hours}h ${minutes}m ${seconds}s remaining ⚡`;
+                
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    setTimeout(updateCountdown, 1000);
+                }
+            }
+            
+            updateCountdown();
+        });
+    </script>
+</body>
+</html>
